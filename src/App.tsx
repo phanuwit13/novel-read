@@ -63,6 +63,7 @@ function App() {
       const match = selectChapter.label.match(/\d+/)
       if (match) {
         setSearchParams({ chapter: match[0] })
+        document.title = selectChapter.label
       }
     }
   }, [selectChapter, setSearchParams])
@@ -111,6 +112,7 @@ function App() {
               onChange={onChange}
               onBlur={onBlur}
               value={value}
+              disabled={allChapterLoading || chapterLoading}
             />
           )}
         />
@@ -127,16 +129,18 @@ function App() {
         <div className='flex justify-between mt-[60px]'>
           <button
             disabled={
-              responseAllChapter?.data.length
+              (responseAllChapter?.data.length
                 ? responseAllChapter?.data.length - 1 === currentIndex
-                : true
+                : true) ||
+              allChapterLoading ||
+              chapterLoading
             }
             className='dark:disabled:opacity-50 min-w-[110px] px-4 py-1 bg-orange-300 dark:bg-gray-700 text-white text-[14px] rounded-full focus:outline-none'
           >
             ตอนก่อนหน้า
           </button>
           <button
-            disabled={currentIndex === 0}
+            disabled={currentIndex === 0 || allChapterLoading || chapterLoading}
             onClick={nextChapter}
             className='dark:disabled:opacity-50 min-w-[110px] px-4 py-1 bg-orange-300 dark:bg-gray-700 text-white text-[14px] rounded-full focus:outline-none'
           >
