@@ -30,4 +30,4 @@ jobs:
           docker pull phanuwit13/novel-read-web:${{ github.sha }}
           docker stop novel-read-web || true
           docker rm novel-read-web || true
-          docker run -d --name novel-read-web -p 8001:8080 phanuwit13/novel-read-web:${{ github.sha }}
+          docker run -d --name novel-read-web -p 8002:8080 phanuwit13/novel-read-web:${{ github.sha }}
