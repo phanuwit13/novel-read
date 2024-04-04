@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  novel-reading:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8002:8080

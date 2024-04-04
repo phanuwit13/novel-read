@@ -2,7 +2,7 @@ import axios, { InternalAxiosRequestConfig } from "axios";
 import { camelizeKeys, decamelizeKeys } from "humps";
 
 const apiClient = axios.create({
-  baseURL: "https://novel-api.glitch.me",
+  baseURL: "https://novel-api.queueter.com/",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
