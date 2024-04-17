@@ -4,15 +4,23 @@ export interface ResponseStatus {
 }
 
 export interface AllChapterItem {
-  "value": string
-  "label": string
+  value: string
+  label: string
+}
+export interface NovelItem {
+  url: string
+  name: string
+  id: string
 }
 
 export interface AllChapterResponse {
   status: ResponseStatus
   data: AllChapterItem[]
 }
-
+export interface AllNovelResponse {
+  status: ResponseStatus
+  data: NovelItem[]
+}
 
 export interface ChapterResponse {
   status: ResponseStatus

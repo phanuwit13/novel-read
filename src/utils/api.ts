@@ -2,7 +2,8 @@ import axios, { InternalAxiosRequestConfig } from "axios";
 import { camelizeKeys, decamelizeKeys } from "humps";
 
 const apiClient = axios.create({
-  baseURL: "https://novel-api.queueter.com/",
+  // baseURL: "https://novel-api.queueter.com/",
+  baseURL: "http://localhost:8080/",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
