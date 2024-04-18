@@ -19,7 +19,7 @@ const RenderRoutes = ({ routes }: { routes: RouteConfig[] }) => {
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/">
         <Suspense fallback={<div>Loading...</div>}>
           <RenderRoutes routes={routeConfig} />
         </Suspense>
